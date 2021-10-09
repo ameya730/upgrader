@@ -8,4 +8,6 @@ const Map<String, String> enUs = {
   'Log-In': 'Log-In',
   'Welcome to VPeepal': 'Welcome to VPeepal',
   'Manage VOs': 'Manage VOs',
+  'Manage your VOs and projects over here':
+      'Manage your VOs and projects over here',
 };

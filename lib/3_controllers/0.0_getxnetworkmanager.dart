@@ -36,6 +36,6 @@ class GetXNetworkManager extends GetxController {
   }
 
   showHomePage() async {
-    await Get.offAndToNamed('/landingpage');
+    await Get.offAndToNamed('/homepage');
   }
 }

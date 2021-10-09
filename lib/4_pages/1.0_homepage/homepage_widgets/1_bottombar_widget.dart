@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_homelandingbar_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/1.1_bottombar_widget_button.dart';
-import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class HomePageBottomBar extends StatelessWidget {
   final bottomController = Get.put(HomeLandingBarController());

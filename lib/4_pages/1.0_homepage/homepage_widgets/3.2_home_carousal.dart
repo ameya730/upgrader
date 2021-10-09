@@ -14,23 +14,22 @@ class HomeMainPageCarousal extends StatelessWidget {
     return CarouselSlider.builder(
       itemCount: 5,
       itemBuilder: (BuildContext context, int i, int y) {
-        return Container(
-          height: 120,
-          child: GestureDetector(
-            onTap: () {},
-            child: Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: ListTile(
-                  title: Text(
-                    carousalList[i],
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
+        return GestureDetector(
+          onTap: () {},
+          child: Card(
+            semanticContainer: false,
+            borderOnForeground: true,
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: ListTile(
+                title: Text(
+                  carousalList[i],
+                  style: TextStyle(
+                    fontSize: 12,
                   ),
                 ),
               ),
@@ -42,13 +41,13 @@ class HomeMainPageCarousal extends StatelessWidget {
         autoPlay: true,
         height: 120,
         autoPlayAnimationDuration: Duration(
-          seconds: 1,
+          seconds: 3,
         ),
-        autoPlayCurve: Curves.linear,
-        viewportFraction: 1,
-        scrollDirection: Axis.vertical,
+        autoPlayCurve: Curves.linearToEaseOut,
+        viewportFraction: 0.77,
+        scrollDirection: Axis.horizontal,
         reverse: true,
-        enlargeCenterPage: false,
+        enlargeCenterPage: true,
         enlargeStrategy: CenterPageEnlargeStrategy.height,
       ),
     );

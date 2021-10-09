@@ -7,3 +7,4 @@ Color bodyTextColor = Color(0xff5b7065);
 Color textFieldColor = Color(0xffa1be95);
 Color buttonColor = Color(0xff426e86);
 Color alternateBackGroundColor = Color(0xff426e86);
+Color appBarColor = Color(0xff426e86);

@@ -8,7 +8,7 @@ class VoBasicDetails {
   String? contactNumber;
   String? vOPhoto;
   String? certificateType;
-  int? registrationNumber;
+  String? registrationNumber;
 
   VoBasicDetails(
       {this.id,

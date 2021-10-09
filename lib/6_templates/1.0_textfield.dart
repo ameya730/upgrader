@@ -21,6 +21,10 @@ class CustomTextField extends StatelessWidget {
   final double? vertical;
   final onFieldSubmitted;
   final onTTap;
+  final double left;
+  final double right;
+  final double top;
+  final double bottom;
 
   CustomTextField({
     this.onChanged,
@@ -41,16 +45,20 @@ class CustomTextField extends StatelessWidget {
     this.vertical = 0.0,
     this.onFieldSubmitted,
     this.onTTap,
+    this.left = 16.0,
+    this.right = 16.0,
+    this.top = 8.0,
+    this.bottom = 8.0,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 16.0,
-        right: 16.0,
-        top: 8.0,
-        bottom: 8.0,
+      padding: EdgeInsets.only(
+        left: left,
+        right: right,
+        top: top,
+        bottom: bottom,
       ),
       child: Container(
         height: height,

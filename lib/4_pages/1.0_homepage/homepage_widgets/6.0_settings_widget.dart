@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ViewProfilePage extends StatelessWidget {
+class SettingsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [],
-      ),
+      child: Text('Settings'),
     );
   }
 }

@@ -6,10 +6,12 @@ import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 class FeaturedVOsCarousalButton extends StatelessWidget {
   final String? mainLabel;
   final String? cardName;
+  final String? imageName;
 
   FeaturedVOsCarousalButton({
     this.mainLabel,
     this.cardName,
+    this.imageName,
   });
 
   @override
@@ -92,6 +94,7 @@ class FeaturedVOsCarousalButton extends StatelessWidget {
             Expanded(
               child: IndividualVOCarousalButton(
                 cardName: cardName!,
+                imageName: imageName!,
               ),
             )
           ],

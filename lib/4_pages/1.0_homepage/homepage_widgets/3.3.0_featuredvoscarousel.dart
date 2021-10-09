@@ -72,7 +72,8 @@ class FeaturedVOsCarousal extends StatelessWidget {
                         ? eightyGList[i]
                         : i == 3
                             ? thirtyFiveList[i]
-                            : fcraList[i]);
+                            : fcraList[i],
+            imageName: registeredImageList[i]);
       },
       options: CarouselOptions(
         height: 350,

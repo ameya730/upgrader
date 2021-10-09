@@ -4,8 +4,12 @@ import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class IndividualVOCarousalButton extends StatelessWidget {
   final String? cardName;
+  final String? imageName;
 
-  IndividualVOCarousalButton({this.cardName});
+  IndividualVOCarousalButton({
+    this.cardName,
+    this.imageName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +19,9 @@ class IndividualVOCarousalButton extends StatelessWidget {
         return Column(
           children: [
             Expanded(
-              child: Container(
-                height: 170,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(0),
-                    bottomLeft: Radius.circular(0),
-                  ),
-                  color: Color(0xff426e86),
-                ),
-                child: Icon(
-                  Icons.ac_unit,
-                  color: Colors.white,
-                ),
+              child: Image.network(
+                imageName!,
+                fit: BoxFit.scaleDown,
               ),
             ),
             Padding(

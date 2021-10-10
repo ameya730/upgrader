@@ -4,10 +4,10 @@ import 'package:vpeepalvoappoct/3_controllers/0.0_switch_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_homelandingbar_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/1_bottombar_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/2.0_profile_widget.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/4.0_search_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/3.0_main_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/5.0_home_donations_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/6.0_settings_widget.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/search_widgets/4.0_search_widget.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class HomePage extends StatelessWidget {

@@ -4,10 +4,10 @@ class HomeTopWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(0.0),
+      padding: const EdgeInsets.only(bottom: 0.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 80,
+        height: 85,
         decoration: BoxDecoration(
           color: Color(0xff426e86),
           borderRadius: BorderRadius.only(

@@ -30,7 +30,7 @@ class IndividualVOCarousalButton extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 40,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(0),
+                  borderRadius: BorderRadius.circular(5),
                   border: Border.all(color: textFieldColor),
                   color: textFieldColor,
                 ),

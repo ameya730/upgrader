@@ -6,7 +6,10 @@ class HomeFeaturedVOs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 0.0, bottom: 8.0),
-      child: FeaturedVOsCarousal(),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: FeaturedVOsCarousal(),
+      ),
     );
   }
 }

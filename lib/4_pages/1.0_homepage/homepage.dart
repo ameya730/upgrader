@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_switch_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_homelandingbar_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/1_bottombar_widget.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/2.0_profile_widget.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/3.0_main_widget.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/5.0_home_donations_widget.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/6.0_settings_widget.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/profilepage_widgets/2.0_profile_widget.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/donations_widgets/5.0_home_donations_widget.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/mainpage_widgets/3.0_main_widget.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/settings_widgets.dart/6.0_settings_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/search_widgets/4.0_search_widget.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xff426e86),
+          backgroundColor: alternateBackGroundColor,
           shadowColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {},
@@ -46,7 +46,9 @@ class HomePage extends StatelessWidget {
         backgroundColor: backGroundColor,
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed('/manageVOs');
+          },
           backgroundColor: Color(0xffed5752),
           tooltip: 'Manage your VOs and projects over here'.tr,
           child: Text(

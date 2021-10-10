@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/3.3.2_individualcarousel.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/mainpage_widgets/3.3.2_individualcarousel.dart';
 import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 
 class FeaturedVOsCarousalButton extends StatelessWidget {

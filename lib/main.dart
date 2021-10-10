@@ -7,6 +7,7 @@ import 'package:vpeepalvoappoct/3_controllers/0.1_login_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0_offlinepage.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/1_landingpage.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/managevos.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/landingpage': (context) => LandingPage(),
         '/homepage': (context) => HomePage(),
         '/nologinofflinescreen': (context) => OfflinePage(),
+        '/manageVOs': (context) => ManageVOPage(),
       },
     );
   }

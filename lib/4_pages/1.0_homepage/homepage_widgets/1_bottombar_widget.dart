@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_homelandingbar_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.1_vobasicdetails_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/1.1_bottombar_widget_button.dart';
+import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class HomePageBottomBar extends StatelessWidget {
   final bottomController = Get.put(HomeLandingBarController());
@@ -14,7 +15,7 @@ class HomePageBottomBar extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color(0xff426e86).withOpacity(1),
+            alternateBackGroundColor.withOpacity(1),
             Colors.white.withOpacity(0.1),
           ],
           begin: Alignment.bottomCenter,

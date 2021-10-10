@@ -40,6 +40,9 @@ class SearchWidget extends StatelessWidget {
                               Get.to(SeeVODetailsPage());
                             },
                             child: Card(
+                              color: cardColor,
+                              elevation: 5,
+                              shadowColor: blackColor,
                               borderOnForeground: true,
                               child: ListTile(
                                 leading: CircleAvatar(
@@ -135,7 +138,8 @@ class SearchWidget extends StatelessWidget {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             10),
-                                                    color: appBarColor,
+                                                    color:
+                                                        alternateBackGroundColor,
                                                   ),
                                                   height: 45,
                                                   width: 55,

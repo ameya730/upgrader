@@ -5,22 +5,22 @@ class CElevatedButton extends StatelessWidget {
   final void Function()? onPressed;
   final IconData? icon;
   final avatorColor;
-  final buttonColor;
+  final Color? buttonColor;
   CElevatedButton({
     @required this.buttonLabel,
     required this.onPressed,
     this.icon,
     this.avatorColor,
-    this.buttonColor = 0xff426e86,
+    this.buttonColor = const Color(0xff3873F7),
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Color(buttonColor),
+          primary: buttonColor!,
           elevation: 8,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),

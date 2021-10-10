@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_homelandingbar_controller.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
-class BottomBarWidgetButton extends StatelessWidget {
+class VOBottomBarWidgetButton extends StatelessWidget {
   final HomeLandingBarController bottomController = Get.find();
   final int? indexValue;
   final IconData? icon;
   final String? buttonLabel;
   final onTap;
 
-  BottomBarWidgetButton({
+  VOBottomBarWidgetButton({
     @required this.indexValue,
     @required this.icon,
     @required this.buttonLabel,
@@ -30,7 +30,7 @@ class BottomBarWidgetButton extends StatelessWidget {
             right: 3.0,
           ),
           child: Container(
-            width: MediaQuery.of(context).size.width / 7,
+            width: MediaQuery.of(context).size.width / 3,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
               color: bottomController.bottomSelectedIndex.value == indexValue

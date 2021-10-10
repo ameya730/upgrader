@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/3.3.1_featuredvoscarousalbutton.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/mainpage_widgets/3.3.1_featuredvoscarousalbutton.dart';
 
 class FeaturedVOsCarousal extends StatelessWidget {
   final List listOfLabels = [

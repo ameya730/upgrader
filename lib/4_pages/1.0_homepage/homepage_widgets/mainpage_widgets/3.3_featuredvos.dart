@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/3.3.0_featuredvoscarousel.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/mainpage_widgets/3.3.0_featuredvoscarousel.dart';
 
 class HomeFeaturedVOs extends StatelessWidget {
   @override

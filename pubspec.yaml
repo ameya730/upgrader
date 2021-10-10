@@ -35,6 +35,7 @@ dependencies:
   encrypt:
   carousel_slider:
   flutter_staggered_grid_view:
+  convex_bottom_bar:
 
 dev_dependencies:
   flutter_test:

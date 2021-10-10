@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SettingsWidget extends StatelessWidget {
+class VODashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Settings'),
+      child: Text('Dashboard'),
     );
   }
 }

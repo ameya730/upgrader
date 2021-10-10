@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class HomeTopWidget extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class HomeTopWidget extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 85,
         decoration: BoxDecoration(
-          color: Color(0xff426e86),
+          color: alternateBackGroundColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0),
             bottomRight: Radius.circular(0),

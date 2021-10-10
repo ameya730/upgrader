@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 class SearchField extends StatelessWidget {
   final String? labelText;
   final onChanged;
+  final onSaved;
+  final validator;
 
   SearchField({
     this.labelText,
     this.onChanged,
+    this.onSaved,
+    this.validator,
   });
 
   @override
@@ -22,6 +26,8 @@ class SearchField extends StatelessWidget {
         width: 280,
         child: TextFormField(
           onChanged: onChanged,
+          onSaved: onSaved,
+          validator: validator,
           style: TextStyle(fontSize: 10),
           decoration: InputDecoration(
             enabled: true,

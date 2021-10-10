@@ -14,9 +14,63 @@ class VODetailsController extends GetxController {
   final filteredSearchList = <VoBasicDetails>[].obs;
   final filteredValue = ''.obs;
 
+  //Observables for detailed search
+  final voNameSearch = ''.obs;
+  final certificateSearch = ''.obs;
+  final registrationNumSearch = ''.obs;
+  final projectNameSearch = ''.obs;
+  final detailedFilterEnabled = false.obs;
+  final clearingFilter = false.obs;
+
   @override
   void onInit() {
     super.onInit();
+  }
+
+  resetSearch() {
+    filteredSearchList.clear();
+    filteredSearchList.addAll(voDetailsList);
+  }
+
+  detailedFilterList() {
+    print(voNameSearch.value);
+    if (voNameSearch.value.isEmpty == false ||
+        certificateSearch.value.isEmpty == false ||
+        registrationNumSearch.value.isEmpty == false) {
+      print('test');
+      filteredSearchList.clear();
+      voDetailsList.forEach(
+        (element) {
+          if (voNameSearch.value.isEmpty == false) {
+            if (element.vOName!.toLowerCase().contains(
+                  voNameSearch.value.toLowerCase(),
+                )) {
+              filteredSearchList.add(element);
+            }
+          }
+          if (certificateSearch.value.isEmpty == false) {
+            if (element.vOName!.toLowerCase().contains(
+                  certificateSearch.value.toLowerCase(),
+                )) {
+              filteredSearchList.add(element);
+            }
+          }
+          if (registrationNumSearch.value.isEmpty == false) {
+            if (element.vOName!.toLowerCase().contains(
+                  registrationNumSearch.value.toLowerCase(),
+                )) {
+              filteredSearchList.add(element);
+            }
+          }
+        },
+      );
+      print('The length is $filteredSearchList.length');
+      if (filteredSearchList.length == 0) {
+        filteredSearchList.addAll(voDetailsList);
+        detailedFilterEnabled.value = false;
+      }
+      update();
+    }
   }
 
   filterList() {
@@ -40,10 +94,10 @@ class VODetailsController extends GetxController {
           }
         },
       );
-      update();
     } else if (filteredValue.value.isEmpty == true) {
       filteredSearchList.addAll(voDetailsList);
     }
+    update();
     print(filteredSearchList);
   }
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/3_controllers/1.0_vobasicdetails_controller.dart';
+import 'package:vpeepalvoappoct/3_controllers/1.1_vobasicdetails_controller.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/search_widgets/4.0.1_topsearchbar.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/search_widgets/4.1_seevodetailspage.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/1.3_searchtextfield.dart';
-import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 
 class SearchWidget extends StatelessWidget {
   final voDetailsController = Get.put(VODetailsController());
@@ -75,73 +75,110 @@ class SearchWidget extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    child: Obx(() {
-                      return voDetailsController.searchEnabled.value
-                          ? Container(
+                    child: Obx(
+                      () {
+                        return voDetailsController.searchEnabled.value
+                            ? TopSearchBar()
+                            : Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SearchField(
+                                      labelText:
+                                          'Quick Search [Search via vo name or certificate type]'
+                                              .tr,
+                                      onChanged: (value) async {
+                                        voDetailsController
+                                            .quickSearchActive.value = true;
+                                        voDetailsController
+                                            .filteredValue.value = value;
+                                        print(value);
+                                        await voDetailsController.filterList();
+                                      },
+                                    ),
+                                    Obx(
+                                      () {
+                                        return voDetailsController
+                                                .detailedFilterEnabled.value
+                                            ? IconButton(
+                                                onPressed: () async {
+                                                  voDetailsController
+                                                      .clearingFilter
+                                                      .value = true;
+
+                                                  await voDetailsController
+                                                      .resetSearch();
+                                                  voDetailsController
+                                                      .detailedFilterEnabled
+                                                      .value = false;
+                                                  voDetailsController
+                                                      .clearingFilter
+                                                      .value = false;
+                                                },
+                                                icon: Icon(
+                                                  Icons.cancel,
+                                                  color: Colors.red,
+                                                  size: 30,
+                                                ),
+                                              )
+                                            : GestureDetector(
+                                                onTap: () {
+                                                  voDetailsController
+                                                      .detailedFilterEnabled
+                                                      .value = true;
+                                                  voDetailsController
+                                                      .searchEnabled
+                                                      .value = true;
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    color: appBarColor,
+                                                  ),
+                                                  height: 45,
+                                                  width: 55,
+                                                  child: Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              4.0),
+                                                      child: Text(
+                                                        'Detailed \nFilter',
+                                                        style: TextStyle(
+                                                          fontSize: 9,
+                                                          color:
+                                                              backGroundColor,
+                                                        ),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              );
+                      },
+                    ),
+                  ),
+                  Obx(() {
+                    return voDetailsController.clearingFilter.value
+                        ? Center(
+                            child: Container(
                               height: MediaQuery.of(context).size.height,
                               width: MediaQuery.of(context).size.width,
                               color: Colors.black87,
-                              child: Column(
-                                children: [
-                                  CElevatedButton(
-                                    buttonLabel: 'Search'.tr,
-                                    onPressed: () {
-                                      voDetailsController.searchEnabled.value =
-                                          false;
-                                    },
-                                  ),
-                                ],
-                              ),
-                            )
-                          : Center(
-                              child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SearchField(
-                                  labelText:
-                                      'Quick Search [Search via vo name or certificate type]'
-                                          .tr,
-                                  onChanged: (value) async {
-                                    voDetailsController
-                                        .quickSearchActive.value = true;
-                                    voDetailsController.filteredValue.value =
-                                        value;
-                                    print(value);
-                                    await voDetailsController.filterList();
-                                  },
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    voDetailsController.searchEnabled.value =
-                                        true;
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      color: appBarColor,
-                                    ),
-                                    height: 45,
-                                    width: 55,
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Text(
-                                          'Detailed \nFilter',
-                                          style: TextStyle(
-                                            fontSize: 9,
-                                            color: backGroundColor,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ));
-                    }),
-                  ),
+                              child: CircularProgressIndicator.adaptive(),
+                            ),
+                          )
+                        : Container();
+                  }),
                 ],
               ),
             )

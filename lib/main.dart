@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vpeepalvoappoct/3_controllers/0.0_getxnetworkmanager.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_localization_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.1_login_controller.dart';
+import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0.0_splashscreen.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0_offlinepage.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/1_landingpage.dart';
+import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/2_signup2ndpage.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/managevos.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final networkManager = GetXNetworkManager();
+  await GetStorage.init();
   Get.put(LoginController());
-  networkManager.checkStatus();
   runApp(MyApp());
 }
 
@@ -31,10 +32,11 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         const Locale('en'),
       ],
-      home: LandingPage(),
+      home: SplashScreen(),
       routes: {
         '/landingpage': (context) => LandingPage(),
         '/homepage': (context) => HomePage(),
+        '/signupsecondpage': (context) => SignUpSecondPageWidget(),
         '/nologinofflinescreen': (context) => OfflinePage(),
         '/manageVOs': (context) => ManageVOPage(),
       },

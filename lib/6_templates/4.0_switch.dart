@@ -19,14 +19,11 @@ class CustomSwitches extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  appBarColor.withOpacity(0.2),
+                  alternateBackGroundColor.withOpacity(0.2),
                   backGroundColor.withOpacity(0.2)
                 ],
                 end: Alignment.centerLeft,
                 begin: Alignment.centerRight,
-              ),
-              border: Border.all(
-                color: backGroundColor,
               ),
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(10),
@@ -42,13 +39,17 @@ class CustomSwitches extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
-                    color: switchBool == true ? appBarColor : blackColor),
+                    color: switchBool == true ? blackColor : cherryColor),
               ),
             ),
           ),
           Switch.adaptive(
             value: switchBool!,
             onChanged: onChanged,
+            activeColor: alternateBackGroundColor,
+            activeTrackColor: alternateBackGroundColor,
+            inactiveThumbColor: cherryColor,
+            inactiveTrackColor: cherryColor,
           ),
         ],
       ),

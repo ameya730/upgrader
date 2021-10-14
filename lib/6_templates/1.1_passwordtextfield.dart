@@ -1,91 +1,96 @@
 import 'package:flutter/material.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
-class PasswordTextField extends StatelessWidget {
-  final onChanged;
+class CustomPasswordField extends StatelessWidget {
   final onSaved;
-  final String? cLabelText;
-  final validator;
-  final keyboardtype;
-  final controller;
-  final String? initialvalue;
-  final double? height;
-  final bool? enabled;
-  final double? width;
-  final bool? obscureText;
-  final Widget? icon;
-  final double vertical;
-  final iconTap;
+  final onChanged;
+  final IconData? icon;
+  final bool obscureText;
+  final onPressed;
+  final String? label;
+  final String? hintText;
 
-  PasswordTextField({
-    this.onChanged,
+  CustomPasswordField({
     this.onSaved,
-    this.cLabelText,
-    this.validator,
-    this.keyboardtype,
-    this.controller,
-    this.initialvalue,
-    this.height,
-    this.enabled,
-    this.width,
-    this.obscureText,
+    this.onChanged,
     this.icon,
-    this.vertical = 0.0,
-    this.iconTap,
+    this.obscureText = false,
+    this.onPressed,
+    this.label,
+    this.hintText = '',
   });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        left: 16.0,
-        right: 16.0,
         top: 8.0,
         bottom: 8.0,
+        left: 16.0,
+        right: 16.0,
       ),
-      child: Container(
-        height: height,
-        width: width,
-        child: TextFormField(
-          initialValue: initialvalue,
-          onSaved: onSaved,
-          onChanged: onChanged,
-          validator: validator,
-          keyboardType: keyboardtype,
-          controller: controller,
-          enabled: enabled,
-          obscureText: obscureText!,
-          decoration: InputDecoration(
-            suffixIcon: icon,
-            fillColor: textFieldColor.withOpacity(0.2),
-            filled: true,
-            contentPadding:
-                EdgeInsets.symmetric(horizontal: 10, vertical: vertical),
-            hintText: cLabelText,
-            hintStyle: TextStyle(
-              color: Colors.black87,
-              fontSize: 12,
-            ),
-            disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: new BorderSide(color: textFieldColor),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: new BorderSide(color: textFieldColor),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: new BorderSide(color: textFieldColor),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: new BorderSide(color: textFieldColor),
-            ),
-          ),
-          style: TextStyle(
-            color: Colors.black87,
-            fontSize: 12,
+      child: Material(
+        elevation: 5,
+        color: backGroundColor,
+        borderRadius: BorderRadius.circular(5),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0, left: 12.0),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      label!,
+                      style: TextStyle(
+                        fontSize: 8,
+                        fontWeight: FontWeight.bold,
+                        color: blackColor,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4.0),
+                    child: Container(
+                      height: 25,
+                      child: TextFormField(
+                        onSaved: onSaved,
+                        onChanged: onChanged,
+                        obscureText: obscureText,
+                        style: TextStyle(
+                          color: blackColor,
+                          fontSize: 12,
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: hintText!,
+                          hintStyle: TextStyle(
+                            color: cherryColor,
+                            fontSize: 12,
+                          ),
+                          errorStyle: TextStyle(
+                            fontSize: 8,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  height: 25,
+                  child: IconButton(
+                    icon: Icon(
+                      icon,
+                    ),
+                    onPressed: onPressed,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

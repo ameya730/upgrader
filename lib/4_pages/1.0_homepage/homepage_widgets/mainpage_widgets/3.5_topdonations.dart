@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 
 class HomeMainTopDonationsCarousal extends StatelessWidget {
@@ -34,8 +35,8 @@ class HomeMainTopDonationsCarousal extends StatelessWidget {
           ),
           gradient: LinearGradient(
             colors: [
-              Colors.teal.withOpacity(0.8),
-              Colors.white,
+              alternateBackGroundColor,
+              backGroundColor,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

@@ -31,19 +31,17 @@ class IndividualVOCarousalButton extends StatelessWidget {
                 height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  border: Border.all(color: textFieldColor),
-                  color: textFieldColor,
+                  color: cherryColor,
                 ),
                 child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 45.0),
-                    child: Text(
-                      cardName!,
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    cardName!,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: backGroundColor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

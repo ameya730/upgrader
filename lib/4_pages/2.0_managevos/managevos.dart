@@ -60,7 +60,7 @@ class Builder extends DelegateBuilder {
   Widget build(BuildContext context, int i, bool isActive) {
     return isActive
         ? CircleAvatar(
-            backgroundColor: Color(0xffed5752).withOpacity(0.9),
+            backgroundColor: cherryColor.withOpacity(0.9),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

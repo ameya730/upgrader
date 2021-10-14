@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             Get.toNamed('/manageVOs');
           },
-          backgroundColor: Color(0xffed5752),
+          backgroundColor: cherryColor,
           tooltip: 'Manage your VOs and projects over here'.tr,
           child: Text(
             'Manage VOs'.tr,

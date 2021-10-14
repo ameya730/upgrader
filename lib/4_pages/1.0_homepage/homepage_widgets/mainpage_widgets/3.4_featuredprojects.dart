@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 import 'package:get/get.dart';
 
@@ -20,13 +21,10 @@ class HomeMainFeaturedProjectsCarousal extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black.withOpacity(0.2),
-          ),
           gradient: LinearGradient(
             colors: [
-              Colors.teal,
-              Colors.white,
+              alternateBackGroundColor,
+              backGroundColor,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -122,7 +120,7 @@ class HomeMainFeaturedProjectsCarousal extends StatelessWidget {
                 );
               },
               options: CarouselOptions(
-                height: 100,
+                height: 110,
                 viewportFraction: 0.77,
                 scrollDirection: Axis.horizontal,
                 enlargeCenterPage: true,

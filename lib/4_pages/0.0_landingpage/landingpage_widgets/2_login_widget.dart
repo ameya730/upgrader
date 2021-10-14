@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/1_api_services/0.1_login_api.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_password_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.1_login_controller.dart';
 import 'package:vpeepalvoappoct/6_templates/1.0_textfield.dart';
@@ -26,45 +25,29 @@ class LoginWidget extends StatelessWidget {
           key: _globalKey,
           child: Column(
             children: [
-              CustomTextField(
-                cLabelText: 'Input EmailID/Phone Number'.tr,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please input email ID or phone number'.tr;
-                  } else {
-                    return null;
-                  }
-                },
-                onSaved: (value) {
-                  loginController.userName.value = value;
-                },
+              Obx(
+                () => CustomFormField(
+                  label: 'USERNAME'.tr,
+                  onChanged: (value) {
+                    loginController.userName.value = value;
+                  },
+                  hintText: loginController.userNameHint.value,
+                ),
               ),
               Obx(
-                () => PasswordTextField(
-                  cLabelText: 'Input Password'.tr,
-                  icon: IconButton(
-                    onPressed: () {
-                      passwordController.toggle();
-                    },
-                    icon: Obx(
-                      () {
-                        return passwordController.showPassword.value
-                            ? Icon(Icons.visibility)
-                            : Icon(Icons.visibility_off);
-                      },
-                    ),
-                  ),
-                  obscureText: passwordController.showPassword.value,
-                  onSaved: (value) {
+                () => CustomPasswordField(
+                  label: 'PASSWORD'.tr,
+                  onChanged: (value) {
                     loginController.password.value = value;
                   },
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'Please input password';
-                    } else {
-                      return null;
-                    }
+                  hintText: loginController.passwordHint.value,
+                  onPressed: () {
+                    passwordController.toggle();
                   },
+                  icon: passwordController.showPassword.value
+                      ? Icons.visibility
+                      : Icons.visibility_off,
+                  obscureText: passwordController.showPassword.value,
                 ),
               ),
               Padding(
@@ -74,39 +57,14 @@ class LoginWidget extends StatelessWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: CElevatedButton(
-                    buttonLabel: 'Log-In'.tr,
-                    onPressed: () {
-                      if (validateAndSave()) {
-                        final LoginAPIService loginAPIService =
-                            new LoginAPIService();
-                        loginAPIService.confirmLogin().then((value) {
-                          if (loginController.isLoginValid.value) {
-                            print(
-                              loginController.loginComment.value.toString(),
-                            );
-                            Get.offAndToNamed('/homepage');
-                          } else {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              new SnackBar(
-                                content: Text(
-                                  loginController.loginComment.value.toString(),
-                                ),
-                              ),
-                            );
-                          }
-                        });
-                      } else {
-                        print('failure');
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          new SnackBar(
-                            content: Text(
-                              loginController.loginComment.value.toString(),
-                            ),
-                          ),
-                        );
+                      buttonLabel: 'Log-In'.tr,
+                      onPressed: () {
+                        loginController.userNameValidation();
+                        loginController.passwordValidation();
+                        loginController.loginValidation(context);
                       }
-                    },
-                  ),
+                      // },
+                      ),
                 ),
               ),
               CustomTextButton(
@@ -118,14 +76,5 @@ class LoginWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  bool validateAndSave() {
-    final form = _globalKey.currentState;
-    if (form!.validate()) {
-      form.save();
-      return true;
-    }
-    return false;
   }
 }

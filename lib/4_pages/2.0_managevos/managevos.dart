@@ -2,13 +2,14 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/managevos_widgets/2.2_dashboard_widget.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/managevos_widgets/2.3_createvos_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/managevos_widgets/2.4_createproject_widget.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class ManageVOPage extends StatelessWidget {
   final pageController = Get.put(VOPageController());
   final List voPages = <Widget>[
-    CreateProject(),
+    CreateVO(),
     VODashboard(),
     CreateProject(),
   ];
@@ -17,17 +18,17 @@ class ManageVOPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Manage your VOs'.tr,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          backgroundColor: alternateBackGroundColor,
-        ),
+        // appBar: AppBar(
+        //   centerTitle: true,
+        //   title: Text(
+        //     'Manage your VOs'.tr,
+        //     style: TextStyle(
+        //       fontSize: 18,
+        //       fontWeight: FontWeight.bold,
+        //     ),
+        //   ),
+        //   backgroundColor: alternateBackGroundColor,
+        // ),
         bottomNavigationBar: ConvexAppBar.builder(
           backgroundColor: alternateBackGroundColor,
           elevation: 25,

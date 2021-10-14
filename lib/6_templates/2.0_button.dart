@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class CElevatedButton extends StatelessWidget {
   final String? buttonLabel;
@@ -20,10 +21,10 @@ class CElevatedButton extends StatelessWidget {
       height: 40,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: buttonColor!,
-          elevation: 8,
+          primary: cherryColor,
+          elevation: 5,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
           ),
         ),
         onPressed: onPressed,

@@ -11,4 +11,4 @@ Color alternateBackGroundColor = Color(0xff3873F7); //Color(0xff426e86);
 Color appBarColor = Color(0xff426e86);
 Color blackColor = Colors.black87;
 Color cardColor = Colors.blueGrey.shade50;
-Color cherryColor = Color(0xfffa812f);//Color(0xffed5752);
+Color cherryColor = Color(0xffee693f);//Color(0xffed5752);

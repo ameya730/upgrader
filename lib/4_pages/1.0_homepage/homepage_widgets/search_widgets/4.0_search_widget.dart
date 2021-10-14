@@ -108,7 +108,6 @@ class SearchWidget extends StatelessWidget {
                                                   voDetailsController
                                                       .clearingFilter
                                                       .value = true;
-
                                                   await voDetailsController
                                                       .resetSearch();
                                                   voDetailsController
@@ -138,8 +137,7 @@ class SearchWidget extends StatelessWidget {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             10),
-                                                    color:
-                                                        alternateBackGroundColor,
+                                                    color: cherryColor,
                                                   ),
                                                   height: 45,
                                                   width: 55,

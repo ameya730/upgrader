@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
-class CustomFormField extends StatelessWidget {
+class CustomDropDownField extends StatelessWidget {
   final onSaved;
   final onChanged;
   final String? label;
   final String? hintText;
+  final List? dropList;
 
-  CustomFormField({
+  CustomDropDownField({
     this.onSaved,
     this.onChanged,
     this.label,
     this.hintText = '',
+    this.dropList,
   });
   @override
   Widget build(BuildContext context) {
@@ -42,10 +44,9 @@ class CustomFormField extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 4.0),
+                padding: const EdgeInsets.only(top: 0.0),
                 child: Container(
-                  height: 25,
-                  child: TextFormField(
+                  child: DropdownButtonFormField(
                     onSaved: onSaved,
                     onChanged: onChanged,
                     style: TextStyle(
@@ -64,6 +65,18 @@ class CustomFormField extends StatelessWidget {
                         height: 0,
                       ),
                     ),
+                    items: dropList!.map((e) {
+                      return DropdownMenuItem(
+                        child: Text(
+                          e,
+                          style: TextStyle(
+                            color: blackColor,
+                            fontSize: 12,
+                          ),
+                        ),
+                        value: e,
+                      );
+                    }).toList(),
                   ),
                 ),
               ),

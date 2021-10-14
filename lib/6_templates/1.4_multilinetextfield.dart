@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
-class CustomFormField extends StatelessWidget {
+class CustomMultiLineFormField extends StatelessWidget {
   final onSaved;
   final onChanged;
   final String? label;
   final String? hintText;
+  final int? minLines;
+  final int? maxLines;
+  final int? maxLength;
+  final double? height;
 
-  CustomFormField({
+  CustomMultiLineFormField({
     this.onSaved,
     this.onChanged,
     this.label,
     this.hintText = '',
+    this.minLines,
+    this.maxLines,
+    this.maxLength,
+    this.height = 80,
   });
   @override
   Widget build(BuildContext context) {
@@ -42,12 +51,17 @@ class CustomFormField extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 4.0),
+                padding: const EdgeInsets.only(top: 0.0),
                 child: Container(
-                  height: 25,
+                  height: height,
                   child: TextFormField(
                     onSaved: onSaved,
                     onChanged: onChanged,
+                    minLines: minLines,
+                    maxLines: maxLines,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(100),
+                    ],
                     style: TextStyle(
                       color: blackColor,
                       fontSize: 12,

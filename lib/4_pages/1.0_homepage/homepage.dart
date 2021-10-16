@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_switch_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_homelandingbar_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage_widgets/1_bottombar_widget.dart';
@@ -25,13 +26,30 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: Drawer(
+          child: TextButton.icon(
+            onPressed: () {
+              final box = new GetStorage();
+              box.erase();
+              Get.offNamedUntil('/landingpage', (route) => false);
+            },
+            icon: Icon(
+              Icons.logout,
+              color: blackColor,
+            ),
+            label: Text(
+              'Logout',
+              style: TextStyle(
+                color: blackColor,
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
         appBar: AppBar(
           backgroundColor: alternateBackGroundColor,
           shadowColor: Colors.transparent,
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.menu),
-          ),
           centerTitle: true,
           title: Text(
             'Welcome to VPeepal'.tr,

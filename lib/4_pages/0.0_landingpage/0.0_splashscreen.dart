@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_getxnetworkmanager.dart';
@@ -7,7 +6,6 @@ import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0_offlinepage.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/1_landingpage.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
-import 'package:vpeepalvoappoct/main.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

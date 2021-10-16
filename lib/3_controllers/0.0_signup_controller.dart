@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/2_signup2ndpage.dart';
-import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class SignUpController extends GetxController {
   final errorStatus = false.obs;

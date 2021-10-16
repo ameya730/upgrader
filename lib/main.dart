@@ -9,7 +9,10 @@ import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0_offlinepage.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/1_landingpage.dart';
 import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/2_signup2ndpage.dart';
 import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/managevos.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/1_managevos.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.0_createproject.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.1_postcreationpage.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2_createvo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +42,9 @@ class MyApp extends StatelessWidget {
         '/signupsecondpage': (context) => SignUpSecondPageWidget(),
         '/nologinofflinescreen': (context) => OfflinePage(),
         '/manageVOs': (context) => ManageVOPage(),
+        '/createproject': (context) => CreateProject(),
+        '/projectpostcreationpage': (context) => PostProjectCreation(),
+        '/createVO': (context) => CreateVO(),
       },
     );
   }

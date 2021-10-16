@@ -20,7 +20,7 @@ class MainHomeWidget extends StatelessWidget {
             ),
           ],
         ),
-        HomeFeaturedVOs(),
+        // HomeFeaturedVOs(),
         HomeMainFeaturedProjectsCarousal(),
         HomeMainTopDonationsCarousal(),
       ],

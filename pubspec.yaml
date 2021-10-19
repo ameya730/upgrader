@@ -36,6 +36,7 @@ dependencies:
   carousel_slider:
   flutter_staggered_grid_view:
   convex_bottom_bar:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:

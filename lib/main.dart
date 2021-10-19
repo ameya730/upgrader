@@ -12,6 +12,7 @@ import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/1_managevos.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.0_createproject.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.1_postcreationpage.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.2_projectargetpage.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2_createvo.dart';
 
 void main() async {
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/manageVOs': (context) => ManageVOPage(),
         '/createproject': (context) => CreateProject(),
         '/projectpostcreationpage': (context) => PostProjectCreation(),
+        '/projecttarget': (context) => ProjectTargetsPage(),
         '/createVO': (context) => CreateVO(),
       },
     );

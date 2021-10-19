@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 
@@ -61,7 +62,9 @@ class PostProjectCreation extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 16.0),
                                 child: CElevatedButton(
                                   buttonLabel: 'Add Targets',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.toNamed('/projecttarget');
+                                  },
                                 ),
                               ),
                               Padding(
@@ -71,20 +74,48 @@ class PostProjectCreation extends StatelessWidget {
                                   onPressed: () {},
                                 ),
                               ),
-                              CheckboxListTile(
-                                value: false,
-                                onChanged: (value) {},
-                                dense: true,
-                                subtitle: Text(
-                                  'Tick here if you want us to verify your project.',
-                                  style: TextStyle(fontSize: 8),
-                                ),
-                                title: Text(
-                                  'Verify Project',
-                                  style: TextStyle(
-                                    color: blackColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 12.0),
+                                child: Container(
+                                  width: 150,
+                                  child: Card(
+                                    elevation: 15,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, left: 16.0),
+                                          child: Text(
+                                            'Verify Project',
+                                            style: TextStyle(
+                                              color: blackColor,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 4.0, left: 16.0),
+                                          child: Container(
+                                            width: 110,
+                                            child: Text(
+                                              'Tick here if you want us to verify your project.',
+                                              style: TextStyle(fontSize: 8),
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Checkbox(
+                                            value: false,
+                                            onChanged: (value) {},
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

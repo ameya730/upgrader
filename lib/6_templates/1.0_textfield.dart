@@ -6,12 +6,18 @@ class CustomFormField extends StatelessWidget {
   final onChanged;
   final String? label;
   final String? hintText;
+  final bool enabled;
+  final String? initialValue;
+  final TextInputType? keyboardType;
 
   CustomFormField({
     this.onSaved,
     this.onChanged,
     this.label,
     this.hintText = '',
+    this.enabled = true,
+    this.initialValue,
+    this.keyboardType,
   });
   @override
   Widget build(BuildContext context) {
@@ -46,12 +52,15 @@ class CustomFormField extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: TextFormField(
+                    enabled: enabled,
                     onSaved: onSaved,
                     onChanged: onChanged,
+                    keyboardType: keyboardType,
                     style: TextStyle(
                       color: blackColor,
                       fontSize: 12,
                     ),
+                    initialValue: initialValue,
                     decoration: InputDecoration(
                       hintText: hintText!,
                       hintStyle: TextStyle(

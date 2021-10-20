@@ -13,7 +13,10 @@ import 'package:vpeepalvoappoct/4_pages/2.0_managevos/1_managevos.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.0_createproject.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.1_postcreationpage.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.2_projectargetpage.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2_createvo.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.3_projectimages.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/2.0_createvo.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/2.1_createvosecondpage.dart';
+import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/2.2_vousermanagement.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +49,10 @@ class MyApp extends StatelessWidget {
         '/createproject': (context) => CreateProject(),
         '/projectpostcreationpage': (context) => PostProjectCreation(),
         '/projecttarget': (context) => ProjectTargetsPage(),
+        '/projectimages': (context) => ProjectImagePage(),
         '/createVO': (context) => CreateVO(),
+        '/vopostcreationpage': (context) => VoPostCreationPage(),
+        '/vousermanagement': (context) => VOUserManagementPage(),
       },
     );
   }

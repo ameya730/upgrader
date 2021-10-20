@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/3_controllers/2.2_projecttargets_controller.dart';
+import 'package:vpeepalvoappoct/3_controllers/2.4_projecttargets_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/projectpage_widgets/2.1.2.0_definetarget_widget.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/projectpage_widgets/2.1.2.1_showtargets_widget.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
@@ -15,7 +15,7 @@ class ProjectTargetsPage extends StatelessWidget {
             backgroundColor: primaryColor,
             centerTitle: true,
             title: Text(
-              'Define Project Targets',
+              'Define Project Targets'.tr,
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
@@ -29,20 +29,51 @@ class ProjectTargetsPage extends StatelessWidget {
                     height: 0,
                     width: 0,
                   )
-                : FloatingActionButton.extended(
-                    onPressed: () {
-                      targetControl.definePageActive.value = true;
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    label: Text(
-                      'Define \nTarget'.tr,
-                      style: TextStyle(
-                        fontSize: 9,
-                        fontWeight: FontWeight.bold,
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Obx(
+                        () => targetControl.targetNameList.length > 0
+                            ? Padding(
+                                padding: const EdgeInsets.only(left: 32.0),
+                                child: FloatingActionButton(
+                                  onPressed: () {},
+                                  backgroundColor: cherryColor,
+                                  // shape: RoundedRectangleBorder(
+                                  //   borderRadius: BorderRadius.circular(10),
+                                  // ),
+                                  child: Text(
+                                    'Save'.tr,
+                                    style: TextStyle(
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                height: 0,
+                                width: 0,
+                              ),
                       ),
-                    ),
+                      FloatingActionButton(
+                        onPressed: () {
+                          targetControl.definePageActive.value = true;
+                        },
+                        backgroundColor: alternateBackGroundColor,
+                        // shape: RoundedRectangleBorder(
+                        //   borderRadius: BorderRadius.circular(10),
+                        // ),
+                        child: Text(
+                          'Define \nTarget'.tr,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 9,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
           body: Stack(

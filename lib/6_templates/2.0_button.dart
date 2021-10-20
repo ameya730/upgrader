@@ -7,18 +7,21 @@ class CElevatedButton extends StatelessWidget {
   final IconData? icon;
   final avatorColor;
   final Color? buttonColor;
-  CElevatedButton({
-    @required this.buttonLabel,
-    required this.onPressed,
-    this.icon,
-    this.avatorColor,
-    this.buttonColor = const Color(0xff3873F7),
-  });
+  final double width;
+
+  CElevatedButton(
+      {@required this.buttonLabel,
+      required this.onPressed,
+      this.icon,
+      this.avatorColor,
+      this.buttonColor = const Color(0xff3873F7),
+      this.width = 120});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 40,
+      width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           primary: cherryColor,
@@ -28,15 +31,13 @@ class CElevatedButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: FittedBox(
-          child: Text(
-            buttonLabel!,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 12,
-            ),
+        child: Text(
+          buttonLabel!,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 10,
           ),
         ),
       ),

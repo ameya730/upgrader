@@ -1,8 +1,7 @@
 import 'dart:ui';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/3_controllers/2.2_projecttargets_controller.dart';
+import 'package:vpeepalvoappoct/3_controllers/2.4_projecttargets_controller.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class ShowTargetsWidget extends StatelessWidget {
@@ -16,283 +15,232 @@ class ShowTargetsWidget extends StatelessWidget {
           itemCount: targetControl.targetNameList.length,
           itemBuilder: (BuildContext context, int i) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Material(
-                elevation: 15,
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  height: 180,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    color: backGroundColor,
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment:
+                    i.isEven ? MainAxisAlignment.end : MainAxisAlignment.start,
+                crossAxisAlignment: i.isEven
+                    ? CrossAxisAlignment.end
+                    : CrossAxisAlignment.start,
+                children: [
+                  Material(
+                    elevation: 5,
+                    child: Container(
+                      height: 25,
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      color: alternateBackGroundColor,
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Text(
+                            targetControl.targetTypeList[i],
+                            style: TextStyle(
+                              color: backGroundColor,
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //1st Row
-                      Material(
-                        elevation: 5,
-                        child: Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
+                  Material(
+                    elevation: 5,
+                    child: Row(
+                      children: [
+                        Material(
+                          elevation: 0,
+                          child: Container(
+                            height: MediaQuery.of(context).size.width * 0.35,
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, top: 0.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    height: 25,
-                                    color: backGroundColor,
-                                    child: Expanded(
-                                      child: Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Text(
-                                            'Target Name',
-                                            style: TextStyle(
-                                              color: blackColor,
-                                              fontSize: 8,
-                                              fontWeight: FontWeight.bold,
+                                  //1st Column
+                                  //1st container for target name
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 4.0, bottom: 8.0),
+                                    child: Container(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            child: Text(
+                                              'Target Name',
+                                              style: TextStyle(
+                                                color: blackColor,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                           ),
-                                        ),
+                                          Container(
+                                            child: Text(
+                                              targetControl.targetNameList[i],
+                                              style: TextStyle(
+                                                color: blackColor,
+                                                fontSize: 9,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
-                                  Expanded(
+                                  //2nd container for target amount
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 4.0, bottom: 4.0),
                                     child: Container(
-                                      height: 25,
-                                      color: alternateBackGroundColor,
-                                      child: Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 8.0),
-                                          child: Text(
-                                            targetControl.targetTypeList[i],
-                                            style: TextStyle(
-                                              color: backGroundColor,
-                                              fontSize: 8,
-                                              fontWeight: FontWeight.bold,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            child: Text(
+                                              'Target Amount',
+                                              style: TextStyle(
+                                                color: blackColor,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                           ),
-                                        ),
+                                          Container(
+                                            child: Text(
+                                              targetControl.targetAmountList[i],
+                                              style: TextStyle(
+                                                color: blackColor,
+                                                fontSize: 9,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  //3rd container for target quantity
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 4.0, bottom: 8.0),
+                                    child: Container(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            child: Text(
+                                              'Target Quantity',
+                                              style: TextStyle(
+                                                color: blackColor,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            child: Text(
+                                              targetControl
+                                                  .targetQuantityList[i],
+                                              style: TextStyle(
+                                                color: blackColor,
+                                                fontSize: 9,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                              Container(
-                                height: 25,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      targetControl.targetNameList[i],
-                                      style: TextStyle(
-                                        color: blackColor,
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        //2nd Column
+                        Expanded(
+                          child: Material(
+                            elevation: 0,
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 8.0,
+                                  bottom: 8.0,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    //1st Column
+                                    //1st container for target name
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 4.0, bottom: 8.0),
+                                      child: Container(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Text(
+                                                'Target Description',
+                                                style: TextStyle(
+                                                  color: blackColor,
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 100,
+                                              child: Text(
+                                                targetControl
+                                                    .targetDescriptionList[i],
+                                                style: TextStyle(
+                                                  color: blackColor,
+                                                  fontSize: 9,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.edit,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  targetControl.deleteDataFromList(i);
+                                },
+                                icon: Icon(
+                                  Icons.delete,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                      ),
-                      //2nd Row
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Material(
-                              elevation: 5,
-                              child: Container(
-                                height: 25,
-                                width: MediaQuery.of(context).size.width,
-                                color: backGroundColor,
-                                child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
-                                    child: Text(
-                                      'Target Description',
-                                      style: TextStyle(
-                                        color: blackColor,
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Material(
-                                elevation: 5,
-                                child: Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: Text(
-                                        targetControl.targetDescriptionList[i],
-                                        style: TextStyle(
-                                          color: blackColor,
-                                          fontSize: 8,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //3rd Row
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height: 25,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.5,
-                                        color: backGroundColor,
-                                        child: Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: Text(
-                                              'Target Amount',
-                                              style: TextStyle(
-                                                color: blackColor,
-                                                fontSize: 8,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Material(
-                                          elevation: 5,
-                                          child: Container(
-                                            height: 25,
-                                            width: 100,
-                                            child: Align(
-                                              alignment: Alignment.center,
-                                              child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 8.0),
-                                                child: Text(
-                                                  targetControl
-                                                      .targetAmountList[i],
-                                                  style: TextStyle(
-                                                    color: blackColor,
-                                                    fontSize: 8,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height: 25,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.5,
-                                        color: backGroundColor,
-                                        child: Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: Text(
-                                              'Target Quantity',
-                                              style: TextStyle(
-                                                color: blackColor,
-                                                fontSize: 8,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Material(
-                                          elevation: 5,
-                                          child: Container(
-                                            height: 25,
-                                            width: 100,
-                                            child: Align(
-                                              alignment: Alignment.center,
-                                              child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 8.0),
-                                                child: Text(
-                                                  targetControl
-                                                      .targetQuantityList[i],
-                                                  style: TextStyle(
-                                                    color: blackColor,
-                                                    fontSize: 8,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: IconButton(
-                              onPressed: () {
-                                targetControl.deleteDataFromList(i);
-                              },
-                              icon: Icon(Icons.delete),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
             );
           },

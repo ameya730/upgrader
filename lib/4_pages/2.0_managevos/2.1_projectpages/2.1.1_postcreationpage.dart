@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
@@ -71,13 +72,15 @@ class PostProjectCreation extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 16.0),
                                 child: CElevatedButton(
                                   buttonLabel: 'Add Images',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.toNamed('/projectimages');
+                                  },
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 12.0),
                                 child: Container(
-                                  width: 150,
+                                  width: 170,
                                   child: Card(
                                     elevation: 15,
                                     child: Column(
@@ -123,7 +126,50 @@ class PostProjectCreation extends StatelessWidget {
                                 padding: const EdgeInsets.only(left: 16.0),
                                 child: CElevatedButton(
                                   buttonLabel: 'Publish Project',
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: Text(
+                                            'Project Published',
+                                            style: TextStyle(
+                                              color: blackColor,
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          content: Text(
+                                            'Your project will now be viewable by all donors.',
+                                            style: TextStyle(
+                                              color: blackColor,
+                                              fontSize: 9,
+                                            ),
+                                          ),
+                                          actions: [
+                                            TextButton.icon(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              icon: FaIcon(
+                                                FontAwesomeIcons.thumbsUp,
+                                                color: blackColor,
+                                                size: 12,
+                                              ),
+                                              label: Text(
+                                                'Ok',
+                                                style: TextStyle(
+                                                  color: blackColor,
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
                                 ),
                               ),
                               Padding(
@@ -131,11 +177,13 @@ class PostProjectCreation extends StatelessWidget {
                                 child: Card(
                                   elevation: 15,
                                   child: TextButton.icon(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Get.offAndToNamed('/manageVOs');
+                                    },
                                     icon: Icon(
-                                      Icons.keyboard_return,
+                                      Icons.arrow_back,
                                       color: blackColor,
-                                      size: 36,
+                                      size: 28,
                                     ),
                                     label: Text(
                                       'Return to \nproject page',

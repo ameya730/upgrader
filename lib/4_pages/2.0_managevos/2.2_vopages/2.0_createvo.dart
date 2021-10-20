@@ -142,7 +142,11 @@ class CreateVO extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: CElevatedButton(
-                      buttonLabel: 'Create Project', onPressed: () {}),
+                    buttonLabel: 'Create VO',
+                    onPressed: () {
+                      Get.offAndToNamed('/vopostcreationpage');
+                    },
+                  ),
                 ),
               )
             ],

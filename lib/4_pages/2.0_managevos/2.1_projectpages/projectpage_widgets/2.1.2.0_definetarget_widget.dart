@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vpeepalvoappoct/3_controllers/2.2_projecttargets_controller.dart';
+import 'package:vpeepalvoappoct/3_controllers/2.4_projecttargets_controller.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/1.0_textfield.dart';
 import 'package:vpeepalvoappoct/6_templates/1.4_multilinetextfield.dart';

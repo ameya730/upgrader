@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vpeepalvoappoct/3_controllers/2.4_vousermanage_controller.dart';
 import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/vopage_widgets/2.2.0_adduser_widget.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
-import 'package:vpeepalvoappoct/6_templates/2.0_button.dart';
 import 'package:vpeepalvoappoct/6_templates/2.2_floatbutton.dart';
 import 'package:get/get.dart';
 
@@ -82,6 +82,38 @@ class VOUserManagementPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            Obx(
+              () => ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: containControl.userNameList.length,
+                  itemBuilder: (BuildContext context, int i) {
+                    return Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Card(
+                        elevation: 10,
+                        child: ListTile(
+                          title: Text(
+                            containControl.userNameList[i],
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: blackColor,
+                            ),
+                          ),
+                          subtitle: Text(
+                            containControl.userRoleList[i],
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: blackColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
             ),
           ],
         ),

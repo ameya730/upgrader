@@ -33,7 +33,7 @@ class CustomMultiLineFormField extends StatelessWidget {
       ),
       child: Material(
         elevation: 5,
-        color: backGroundColor,
+        color: offWhiteColor,
         borderRadius: BorderRadius.circular(5),
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 12.0),

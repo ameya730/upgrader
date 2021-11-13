@@ -4,19 +4,14 @@ import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_localization_controller.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.1_login_controller.dart';
-import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0.0_splashscreen.dart';
-import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/0_offlinepage.dart';
-import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/1_landingpage.dart';
-import 'package:vpeepalvoappoct/4_pages/0.0_landingpage/2_signup2ndpage.dart';
-import 'package:vpeepalvoappoct/4_pages/1.0_homepage/homepage.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/1_managevos.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.0_createproject.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.1_postcreationpage.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.2_projectargetpage.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.1_projectpages/2.1.3_projectimages.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/2.0_createvo.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/2.1_createvosecondpage.dart';
-import 'package:vpeepalvoappoct/4_pages/2.0_managevos/2.2_vopages/2.2_vousermanagement.dart';
+import 'package:vpeepalvoappoct/4_pages/0.0_offlinepage.dart';
+import 'package:vpeepalvoappoct/4_pages/0.1_splashscreen.dart';
+import 'package:vpeepalvoappoct/4_pages/3.0_homepage.dart';
+import 'package:vpeepalvoappoct/4_pages/1.0_landingpage.dart';
+import 'package:vpeepalvoappoct/4_pages/1.1_signup2ndpage.dart';
+import 'package:vpeepalvoappoct/4_pages/4.0_profile_page.dart';
+import 'package:vpeepalvoappoct/4_pages/5.0_createvo_page.dart';
+import 'package:vpeepalvoappoct/4_pages/5.1_yourvos_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,16 +38,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/landingpage': (context) => LandingPage(),
         '/homepage': (context) => HomePage(),
+        '/profilepage': (context) => ProfilePage(),
         '/signupsecondpage': (context) => SignUpSecondPageWidget(),
         '/nologinofflinescreen': (context) => OfflinePage(),
-        '/manageVOs': (context) => ManageVOPage(),
-        '/createproject': (context) => CreateProject(),
-        '/projectpostcreationpage': (context) => PostProjectCreation(),
-        '/projecttarget': (context) => ProjectTargetsPage(),
-        '/projectimages': (context) => ProjectImagePage(),
-        '/createVO': (context) => CreateVO(),
-        '/vopostcreationpage': (context) => VoPostCreationPage(),
-        '/vousermanagement': (context) => VOUserManagementPage(),
+        '/createVOfirstpage': (context) => CreateVOPage(),
+        '/yourvospage': (context) => ViewYourVOsPage(),
       },
     );
   }

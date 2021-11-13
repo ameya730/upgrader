@@ -26,7 +26,7 @@ class CustomDropDownField extends StatelessWidget {
       ),
       child: Material(
         elevation: 5,
-        color: backGroundColor,
+        color: offWhiteColor,
         borderRadius: BorderRadius.circular(5),
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 12.0),
@@ -43,41 +43,38 @@ class CustomDropDownField extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 0.0),
-                child: Container(
-                  child: DropdownButtonFormField(
-                    onSaved: onSaved,
-                    onChanged: onChanged,
-                    style: TextStyle(
-                      color: blackColor,
+              Container(
+                child: DropdownButtonFormField(
+                  onSaved: onSaved,
+                  onChanged: onChanged,
+                  style: TextStyle(
+                    color: blackColor,
+                    fontSize: 12,
+                  ),
+                  decoration: InputDecoration(
+                    hintText: hintText!,
+                    hintStyle: TextStyle(
+                      color: cherryColor,
                       fontSize: 12,
                     ),
-                    decoration: InputDecoration(
-                      hintText: hintText!,
-                      hintStyle: TextStyle(
-                        color: cherryColor,
-                        fontSize: 12,
-                      ),
-                      border: InputBorder.none,
-                      errorStyle: TextStyle(
-                        fontSize: 8,
-                        height: 0,
-                      ),
+                    border: InputBorder.none,
+                    errorStyle: TextStyle(
+                      fontSize: 8,
+                      height: 0,
                     ),
-                    items: dropList!.map((e) {
-                      return DropdownMenuItem(
-                        child: Text(
-                          e,
-                          style: TextStyle(
-                            color: blackColor,
-                            fontSize: 12,
-                          ),
-                        ),
-                        value: e,
-                      );
-                    }).toList(),
                   ),
+                  items: dropList!.map((e) {
+                    return DropdownMenuItem(
+                      child: Text(
+                        e,
+                        style: TextStyle(
+                          color: blackColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                      value: e,
+                    );
+                  }).toList(),
                 ),
               ),
             ],

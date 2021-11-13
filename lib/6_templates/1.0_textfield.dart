@@ -30,7 +30,7 @@ class CustomFormField extends StatelessWidget {
       ),
       child: Material(
         elevation: 5,
-        color: backGroundColor,
+        color: offWhiteColor,
         borderRadius: BorderRadius.circular(5),
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 12.0),
@@ -80,6 +80,97 @@ class CustomFormField extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CForm extends StatelessWidget {
+  final onSaved;
+  final onChanged;
+  final String? label;
+  final String? hintText;
+  final bool enabled;
+  final String? initialValue;
+  final TextInputType? keyboardType;
+
+  CForm({
+    this.onSaved,
+    this.onChanged,
+    this.label,
+    this.hintText = '',
+    this.enabled = true,
+    this.initialValue,
+    this.keyboardType,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.topRight,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Material(
+            elevation: 2,
+            child: Container(
+              height: 45,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: primaryColor.withOpacity(0.5),
+                  width: 0.4,
+                ),
+                color: backGroundColor,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 2.0,
+                  bottom: 4.0,
+                  left: 8.0,
+                ),
+                child: TextFormField(
+                  onChanged: onChanged,
+                  style: TextStyle(
+                    color: blackColor,
+                    fontSize: 11,
+                  ),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    errorStyle: TextStyle(
+                      fontSize: 0,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            right: 8.0,
+            top: 8.0,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              color: primaryColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 4.0,
+                right: 4.0,
+              ),
+              child: Text(
+                label!.toUpperCase(),
+                style: TextStyle(
+                  color: backGroundColor,
+                  fontSize: 8,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

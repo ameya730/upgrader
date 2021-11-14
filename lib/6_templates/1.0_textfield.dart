@@ -160,7 +160,7 @@ class CForm extends StatelessWidget {
                 right: 4.0,
               ),
               child: Text(
-                label!.toUpperCase(),
+                label!,
                 style: TextStyle(
                   color: backGroundColor,
                   fontSize: 8,

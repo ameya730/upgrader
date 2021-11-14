@@ -15,148 +15,150 @@ class VOProfileCard extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: const EdgeInsets.only(
-                top: 4.0,
-                bottom: 8.0,
-              ),
+              padding: const EdgeInsets.all(18.0),
               child: Material(
                 elevation: 5,
-                borderOnForeground: true,
-                borderRadius: BorderRadius.circular(5),
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
-                      color: blackColor.withOpacity(0.2),
-                      width: 0.5,
+                      color: primaryColor.withOpacity(0.5),
+                      width: 0.4,
                     ),
-                    borderRadius: BorderRadius.circular(5),
                   ),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 4.0),
-                        child: Row(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 2.0,
+                      right: 2.0,
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.55,
+                                child: VoCardListTile(
+                                  title: 'VO Name'.tr,
+                                  subTitle: voCreationControl.voName.value,
+                                ),
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                child: VoCardListTile(
+                                  title: 'Established On'.tr,
+                                  subTitle:
+                                      voCreationControl.establishedOn.value,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.6,
+                              width: MediaQuery.of(context).size.width * 0.55,
                               child: VoCardListTile(
-                                title: 'VO Name'.tr,
-                                subTitle: voCreationControl.voName.value,
+                                title: 'Status'.tr,
+                                subTitle: voCreationControl.voStatus.value,
                               ),
                             ),
                             Container(
                               width: MediaQuery.of(context).size.width * 0.3,
                               child: VoCardListTile(
-                                title: 'Established On'.tr,
-                                subTitle: voCreationControl.establishedOn.value,
+                                title: 'Registration Number'.tr,
+                                subTitle:
+                                    voCreationControl.registrationNo.value,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            child: VoCardListTile(
-                              title: 'Status'.tr,
-                              subTitle: voCreationControl.voStatus.value,
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.55,
+                              child: VoCardListTile(
+                                title: 'Email'.tr,
+                                subTitle: voCreationControl.voEmail.value,
+                              ),
                             ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.3,
-                            child: VoCardListTile(
-                              title: 'Registration Number'.tr,
-                              subTitle: voCreationControl.registrationNo.value,
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              child: VoCardListTile(
+                                title: 'Mobile'.tr,
+                                subTitle: voCreationControl.voMobile.value,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            child: VoCardListTile(
-                              title: 'Email'.tr,
-                              subTitle: voCreationControl.voEmail.value,
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.3,
-                            child: VoCardListTile(
-                              title: 'Mobile'.tr,
-                              subTitle: voCreationControl.voMobile.value,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            child: VoCardListTile(
-                              title: 'Address'.tr,
-                              subTitle: voCreationControl.voAddress.value,
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.3,
-                            child: VoCardListTile(
-                              title: 'Taluka/Suburb'.tr,
-                              subTitle: voCreationControl.voTaluka.value,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            child: VoCardListTile(
-                              title: 'City/District'.tr,
-                              subTitle: voCreationControl.voCity.value,
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.30,
-                            child: VoCardListTile(
-                              title: 'Pincode'.tr,
-                              subTitle: voCreationControl.voPincode.value,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.3,
-                          child: VoCardListTile(
-                            title: 'State'.tr,
-                            subTitle: voCreationControl.voState.value,
-                          ),
+                          ],
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 4.0),
-                        child: Align(
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.55,
+                              child: VoCardListTile(
+                                title: 'Address'.tr,
+                                subTitle: voCreationControl.voAddress.value,
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              child: VoCardListTile(
+                                title: 'Taluka/Suburb'.tr,
+                                subTitle: voCreationControl.voTaluka.value,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.55,
+                              child: VoCardListTile(
+                                title: 'City/District'.tr,
+                                subTitle: voCreationControl.voCity.value,
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.30,
+                              child: VoCardListTile(
+                                title: 'Pincode'.tr,
+                                subTitle: voCreationControl.voPincode.value,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 0.5,
+                            width: MediaQuery.of(context).size.width * 0.3,
                             child: VoCardListTile(
-                              title: 'VO Description'.tr,
-                              subTitle: voCreationControl.voDescription.value,
+                              title: 'State'.tr,
+                              subTitle: voCreationControl.voState.value,
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 4.0),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              child: VoCardListTile(
+                                title: 'VO Description'.tr,
+                                subTitle: voCreationControl.voDescription.value,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

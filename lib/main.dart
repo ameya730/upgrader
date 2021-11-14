@@ -12,6 +12,7 @@ import 'package:vpeepalvoappoct/4_pages/1.1_signup2ndpage.dart';
 import 'package:vpeepalvoappoct/4_pages/4.0_profile_page.dart';
 import 'package:vpeepalvoappoct/4_pages/5.0_createvo_page.dart';
 import 'package:vpeepalvoappoct/4_pages/5.1_yourvos_page.dart';
+import 'package:vpeepalvoappoct/4_pages/6.0_createproject_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/nologinofflinescreen': (context) => OfflinePage(),
         '/createVOfirstpage': (context) => CreateVOPage(),
         '/yourvospage': (context) => ViewYourVOsPage(),
+        '/createproject': (context) => ProjectCreation(),
       },
     );
   }

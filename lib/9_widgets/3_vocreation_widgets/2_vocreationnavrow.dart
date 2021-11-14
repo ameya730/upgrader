@@ -15,14 +15,20 @@ class VoCreationNavRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {
-            voCreationControl.voPage.value = 0;
-          },
-          child: CircleAvatar(
-            child: Text(
-              '1',
-              style: _style,
+        Obx(
+          () => GestureDetector(
+            onTap: () {
+              voCreationControl.voPage.value = 0;
+            },
+            child: CircleAvatar(
+              backgroundColor: voCreationControl.voPage.value == 0
+                  ? Colors.black87
+                  : primaryColor,
+              radius: voCreationControl.voPage.value == 0 ? 24 : 20,
+              child: Text(
+                '1',
+                style: _style,
+              ),
             ),
           ),
         ),
@@ -31,14 +37,20 @@ class VoCreationNavRow extends StatelessWidget {
           color: primaryColor,
           height: 5,
         ),
-        GestureDetector(
-          onTap: () {
-            voCreationControl.voPage.value = 1;
-          },
-          child: CircleAvatar(
-            child: Text(
-              '2',
-              style: _style,
+        Obx(
+          () => GestureDetector(
+            onTap: () {
+              voCreationControl.voPage.value = 1;
+            },
+            child: CircleAvatar(
+              backgroundColor: voCreationControl.voPage.value == 1
+                  ? Colors.black87
+                  : primaryColor,
+              radius: voCreationControl.voPage.value == 1 ? 24 : 20,
+              child: Text(
+                '2',
+                style: _style,
+              ),
             ),
           ),
         ),
@@ -47,14 +59,20 @@ class VoCreationNavRow extends StatelessWidget {
           color: primaryColor,
           height: 5,
         ),
-        GestureDetector(
-          onTap: () {
-            voCreationControl.voPage.value = 2;
-          },
-          child: CircleAvatar(
-            child: Text(
-              '3',
-              style: _style,
+        Obx(
+          () => GestureDetector(
+            onTap: () {
+              voCreationControl.voPage.value = 2;
+            },
+            child: CircleAvatar(
+              backgroundColor: voCreationControl.voPage.value == 2
+                  ? Colors.black87
+                  : primaryColor,
+              radius: voCreationControl.voPage.value == 2 ? 24 : 20,
+              child: Text(
+                '3',
+                style: _style,
+              ),
             ),
           ),
         ),
@@ -63,14 +81,20 @@ class VoCreationNavRow extends StatelessWidget {
           color: primaryColor,
           height: 5,
         ),
-        GestureDetector(
-          onTap: () {
-            voCreationControl.voPage.value = 3;
-          },
-          child: CircleAvatar(
-            child: Text(
-              '4',
-              style: _style,
+        Obx(
+          () => GestureDetector(
+            onTap: () {
+              voCreationControl.voPage.value = 3;
+            },
+            child: CircleAvatar(
+              backgroundColor: voCreationControl.voPage.value == 3
+                  ? Colors.black87
+                  : primaryColor,
+              radius: voCreationControl.voPage.value == 3 ? 24 : 20,
+              child: Text(
+                '4',
+                style: _style,
+              ),
             ),
           ),
         ),

@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/6_templates/6.0_styletemplates.dart';
 
-class VoCreationSaveSubmitRow extends StatelessWidget {
+class ProjectCreationSaveSubmitRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +32,7 @@ class VoCreationSaveSubmitRow extends StatelessWidget {
               elevation: MaterialStateProperty.all(2),
             ),
             label: Text(
-              'Create your VO',
+              'Create your Project',
               style: buttonTextStyle,
             ),
             onPressed: () {},

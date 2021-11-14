@@ -24,7 +24,7 @@ class VoCreationFirstWidget extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.95,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CForm(
             label: 'VO Name',
@@ -61,7 +61,7 @@ class VoCreationFirstWidget extends StatelessWidget {
                 child: CForm(
                   label: 'Registration Year',
                   onChanged: (value) {
-                    voCreationControl.voStatus.value = value;
+                    voCreationControl.establishedOn.value = value;
                   },
                 ),
               ),

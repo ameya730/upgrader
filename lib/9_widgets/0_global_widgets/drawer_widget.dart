@@ -55,7 +55,9 @@ class DrawerWidget extends StatelessWidget {
                 DrawerCardAwesomeFontWidget(
                   label: 'Create Project'.tr,
                   icon: FontAwesomeIcons.projectDiagram,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/createproject');
+                  },
                 ),
                 DrawerCardAwesomeFontWidget(
                   label: 'Manage Projects'.tr,

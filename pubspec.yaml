@@ -38,6 +38,9 @@ dependencies:
   convex_bottom_bar:
   font_awesome_flutter:
   file_picker:
+  showcaseview:
+  intl:
+  flutter_material_pickers:
 
 dev_dependencies:
   flutter_test:

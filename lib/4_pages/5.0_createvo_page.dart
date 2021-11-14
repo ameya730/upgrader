@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vpeepalvoappoct/3_controllers/2.1_vocreation_controller.dart';
-import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 import 'package:vpeepalvoappoct/9_widgets/0_global_widgets/global_page_container_widget.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/9_widgets/3_vocreation_widgets/1_voprofile_card_widget.dart';
@@ -30,7 +29,7 @@ class CreateVOPage extends StatelessWidget {
           SliverFillRemaining(
             hasScrollBody: true,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(

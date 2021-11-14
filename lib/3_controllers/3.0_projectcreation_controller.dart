@@ -1,7 +1,8 @@
-import 'package:get/get.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:get/get.dart';
 
-class ProjectImageController extends GetxController {
+class ProjectCreationController extends GetxController {
+  final projectPage = 0.obs;
   List<PlatformFile> selectedImagePath = <PlatformFile>[].obs;
   List<String> imagePath = <String>[].obs;
   List<String> imageName = <String>[].obs;

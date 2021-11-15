@@ -104,12 +104,15 @@ class CForm extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topRight,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Material(
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 4.0,
+        bottom: 4.0,
+      ),
+      child: Stack(
+        alignment: Alignment.topRight,
+        children: [
+          Material(
             elevation: 2,
             child: Container(
               height: 45,
@@ -121,44 +124,28 @@ class CForm extends StatelessWidget {
                 ),
                 color: backGroundColor,
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 2.0,
-                  bottom: 4.0,
-                  left: 8.0,
+              child: TextFormField(
+                onChanged: onChanged,
+                style: TextStyle(
+                  color: blackColor,
+                  fontSize: 11,
                 ),
-                child: TextFormField(
-                  onChanged: onChanged,
-                  style: TextStyle(
-                    color: blackColor,
-                    fontSize: 11,
-                  ),
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    errorStyle: TextStyle(
-                      fontSize: 0,
-                      height: 0,
-                    ),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  errorStyle: TextStyle(
+                    fontSize: 0,
+                    height: 0,
                   ),
                 ),
               ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            right: 8.0,
-            top: 8.0,
-          ),
-          child: Container(
+          Container(
             decoration: BoxDecoration(
               color: primaryColor,
             ),
             child: Padding(
-              padding: const EdgeInsets.only(
-                left: 4.0,
-                right: 4.0,
-              ),
+              padding: const EdgeInsets.all(1.0),
               child: Text(
                 label!,
                 style: TextStyle(
@@ -169,8 +156,8 @@ class CForm extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

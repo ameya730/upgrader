@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class HomeMainPageCarousal extends StatelessWidget {
   final List carousalList = [
@@ -16,20 +17,20 @@ class HomeMainPageCarousal extends StatelessWidget {
       itemBuilder: (BuildContext context, int i, int y) {
         return GestureDetector(
           onTap: () {},
-          child: Card(
-            semanticContainer: false,
-            borderOnForeground: true,
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: backGroundColor,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: ListTile(
-                title: Text(
+            child: ListTile(
+              title: Align(
+                alignment: Alignment.topCenter,
+                child: Text(
                   carousalList[i],
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -39,16 +40,14 @@ class HomeMainPageCarousal extends StatelessWidget {
       },
       options: CarouselOptions(
         autoPlay: true,
-        height: 120,
-        autoPlayAnimationDuration: Duration(
-          seconds: 3,
-        ),
+        height: 50,
+        autoPlayAnimationDuration: Duration(seconds: 3),
         autoPlayCurve: Curves.linearToEaseOut,
-        viewportFraction: 0.77,
-        scrollDirection: Axis.horizontal,
+        viewportFraction: 1,
+        scrollDirection: Axis.vertical,
         reverse: true,
-        enlargeCenterPage: true,
-        enlargeStrategy: CenterPageEnlargeStrategy.height,
+        // enlargeCenterPage: true,
+        // enlargeStrategy: CenterPageEnlargeStrategy.height,
       ),
     );
   }

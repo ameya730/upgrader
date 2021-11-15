@@ -19,17 +19,23 @@ class VoCreationSecondWidget extends StatelessWidget {
               voCreationControl.voDescription.value = value;
             },
           ),
-          CForm(
-            label: 'Email ID for Correspondence',
-            onChanged: (value) {
-              voCreationControl.voName.value = value;
-            },
+          Container(
+            width: MediaQuery.of(context).size.width * 0.91,
+            child: CForm(
+              label: 'Email ID for Correspondence',
+              onChanged: (value) {
+                voCreationControl.voName.value = value;
+              },
+            ),
           ),
-          CForm(
-            label: 'Mobile Number for Correspondence',
-            onChanged: (value) {
-              voCreationControl.voStatus.value = value;
-            },
+          Container(
+            width: MediaQuery.of(context).size.width * 0.91,
+            child: CForm(
+              label: 'Mobile Number for Correspondence',
+              onChanged: (value) {
+                voCreationControl.voStatus.value = value;
+              },
+            ),
           ),
         ],
       ),

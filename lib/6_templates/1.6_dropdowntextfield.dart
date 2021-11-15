@@ -114,16 +114,18 @@ class CDropDownForm extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topRight,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Material(
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 4.0,
+        bottom: 4.0,
+      ),
+      child: Stack(
+        alignment: Alignment.topRight,
+        children: [
+          Material(
             elevation: 2,
             child: Container(
               height: 45,
-              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: primaryColor.withOpacity(0.5),
@@ -131,59 +133,43 @@ class CDropDownForm extends StatelessWidget {
                 ),
                 color: backGroundColor,
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 2.0,
-                  bottom: 4.0,
-                  left: 8.0,
+              child: TextFormField(
+                onTap: () {
+                  showMaterialScrollPicker(
+                      title: dropDownTitle!,
+                      context: context,
+                      items: dropDownList,
+                      selectedItem: pickerController,
+                      onChanged: (value) async {
+                        pickerController!.text = value.toString();
+                      });
+                },
+                controller: pickerController!,
+                onChanged: onChanged,
+                style: TextStyle(
+                  color: blackColor,
+                  fontSize: 11,
                 ),
-                child: TextFormField(
-                  onTap: () {
-                    showMaterialScrollPicker(
-                        title: dropDownTitle!,
-                        context: context,
-                        items: dropDownList,
-                        selectedItem: pickerController,
-                        onChanged: (value) async {
-                          pickerController!.text = value.toString();
-                        });
-                  },
-                  controller: pickerController!,
-                  onChanged: onChanged,
-                  style: TextStyle(
-                    color: blackColor,
-                    fontSize: 11,
-                  ),
-                  readOnly: true,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    errorStyle: TextStyle(
-                      fontSize: 0,
-                      height: 0,
-                    ),
+                readOnly: true,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  errorStyle: TextStyle(
+                    fontSize: 0,
+                    height: 0,
                   ),
                 ),
               ),
             ),
           ),
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                right: 8.0,
-                top: 8.0,
-              ),
-              child: Container(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
                 decoration: BoxDecoration(
                   color: primaryColor,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 4.0,
-                    right: 4.0,
-                  ),
+                  padding: const EdgeInsets.all(1.0),
                   child: Text(
                     label!,
                     style: TextStyle(
@@ -194,17 +180,17 @@ class CDropDownForm extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 4.0, left: 22.0),
-              child: Icon(
-                Icons.arrow_drop_down_sharp,
-                color: primaryColor,
+              Padding(
+                padding: const EdgeInsets.only(top: 4.0, left: 24.0),
+                child: Icon(
+                  Icons.arrow_drop_down_sharp,
+                  color: primaryColor,
+                ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

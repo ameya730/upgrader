@@ -8,7 +8,6 @@ class HomeTopWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 0.0),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 85,
         decoration: BoxDecoration(
           color: alternateBackGroundColor,
           borderRadius: BorderRadius.only(

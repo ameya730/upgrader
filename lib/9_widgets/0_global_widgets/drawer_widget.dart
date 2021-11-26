@@ -19,6 +19,76 @@ class DrawerWidget extends StatelessWidget {
             hasScrollBody: true,
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        child: Text(
+                          'Photo',
+                          style: TextStyle(fontSize: 8),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Full name of user',
+                              style: TextStyle(
+                                color: greyTextFormFieldLabel,
+                                fontFamily: fontFamilyCandara,
+                                fontSize: 9,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              '9657712579',
+                              style: TextStyle(
+                                color: greyTextFormFieldLabel,
+                                fontFamily: fontFamilyCandara,
+                                fontSize: 9,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 8.0,
+                    bottom: 8.0,
+                  ),
+                  child: Container(
+                    height: 20,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      border: Border.symmetric(
+                        horizontal: BorderSide(
+                          color: greyColor,
+                          width: 0.4,
+                        ),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Text(
+                        'test@gmail.com',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: greyTextFormFieldLabel,
+                          fontFamily: fontFamilyCandara,
+                          fontSize: 9,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 DrawerCardAwesomeFontWidget(
                   label: 'Home Page'.tr,
                   icon: FontAwesomeIcons.home,
@@ -27,7 +97,7 @@ class DrawerWidget extends StatelessWidget {
                   },
                 ),
                 DrawerCardAwesomeFontWidget(
-                  label: 'Profile'.tr,
+                  label: 'My Profile'.tr,
                   icon: FontAwesomeIcons.solidAddressBook,
                   onPressed: () {
                     Get.toNamed('/profilepage');
@@ -36,7 +106,9 @@ class DrawerWidget extends StatelessWidget {
                 DrawerCardAwesomeFontWidget(
                   label: 'Search'.tr,
                   icon: FontAwesomeIcons.search,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.offNamed('/searchpage');
+                  },
                 ),
                 DrawerCardAwesomeFontWidget(
                   label: 'Create VO'.tr,
@@ -82,6 +154,11 @@ class DrawerWidget extends StatelessWidget {
                 DrawerCardAwesomeFontWidget(
                   label: 'Terms and Conditions'.tr,
                   icon: FontAwesomeIcons.discourse,
+                  onPressed: () {},
+                ),
+                DrawerCardAwesomeFontWidget(
+                  label: 'Privacy Policy'.tr,
+                  icon: FontAwesomeIcons.doorClosed,
                   onPressed: () {},
                 ),
                 DrawerCardAwesomeFontWidget(

@@ -41,6 +41,8 @@ dependencies:
   showcaseview:
   intl:
   flutter_material_pickers:
+  pinput:
+  timer_count_down:
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +63,20 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - lib/7_assets/
+    - lib/7_assets/images/
     - lib/0_json/
+
+  fonts:
+    - family: Harlow
+      fonts:
+        - asset: lib/7_assets/fonts/Harlow-Solid-Italic-Italic.ttf
+
+    - family: Chaparral
+      fonts:
+        - asset: lib/7_assets/fonts/Chaparral-Pro-Light.otf
+    - family: Candara
+      fonts:
+        - asset: lib/7_assets/fonts/Candara-Font.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

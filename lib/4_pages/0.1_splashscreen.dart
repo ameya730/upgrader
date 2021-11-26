@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/0.0_getxnetworkmanager.dart';
@@ -53,59 +54,63 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: blackColor,
+        backgroundColor: backGroundColor,
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'V',
-                style: TextStyle(
-                  color: backGroundColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
+              Padding(
+                padding: const EdgeInsets.only(top: 128.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('lib/7_assets/images/vpeepleicon.png'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'V',
+                          style: TextStyle(
+                            fontFamily: 'Harlow',
+                            color: primaryColor,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'peeple',
+                          style: TextStyle(
+                            fontFamily: 'Chaparral',
+                            color: blackColor,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w900,
+                            shadows: [
+                              Shadow(
+                                blurRadius: 1.0,
+                                color: blackColor,
+                              ),
+                              Shadow(
+                                offset: Offset(1.0, 1.0),
+                                blurRadius: 3.0,
+                                color: blackColor,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Version 1.0.0',
+                      style: TextStyle(
+                        fontFamily: 'Chaparral',
+                        color: greyColor,
+                        fontSize: 9,
+                      ),
+                    )
+                  ],
                 ),
               ),
-              Text(
-                'E',
-                style: TextStyle(
-                  color: backGroundColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
-                ),
-              ),
-              Text(
-                'E',
-                style: TextStyle(
-                  color: backGroundColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
-                ),
-              ),
-              Text(
-                'P',
-                style: TextStyle(
-                  color: backGroundColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
-                ),
-              ),
-              Text(
-                'L',
-                style: TextStyle(
-                  color: backGroundColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
-                ),
-              ),
-              Text(
-                'E',
-                style: TextStyle(
-                  color: backGroundColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 48,
-                ),
-              ),
+              Image.asset('lib/7_assets/images/splashscreenbottomimage.png'),
             ],
           ),
         ),

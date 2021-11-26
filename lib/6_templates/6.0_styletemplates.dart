@@ -5,3 +5,17 @@ TextStyle buttonTextStyle = TextStyle(
   fontSize: 9,
   color: blackColor,
 );
+
+TextStyle headingStyle = TextStyle(
+  color: greyTextFormFieldLabel,
+  fontWeight: FontWeight.bold,
+  fontFamily: fontFamilyCandara,
+  fontSize: 14,
+);
+
+TextStyle subHeadingStyle = TextStyle(
+  color: greyTextFormFieldLabel,
+  fontWeight: FontWeight.bold,
+  fontFamily: fontFamilyCandara,
+  fontSize: 10,
+);

@@ -38,10 +38,24 @@ class DrawerCardAwesomeFontWidget extends StatelessWidget {
                 ),
               ),
               onPressed: onPressed,
-              icon: FaIcon(
-                icon,
-                size: 18,
-                color: primaryColor,
+              icon: Material(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    color: primaryColor,
+                    width: 0.4,
+                  ),
+                  borderRadius: BorderRadius.circular(60),
+                ),
+                elevation: 5,
+                child: CircleAvatar(
+                  backgroundColor: whiteColor,
+                  radius: 15,
+                  child: FaIcon(
+                    icon,
+                    size: 12,
+                    color: primaryColor,
+                  ),
+                ),
               ),
             ),
           ),
@@ -87,10 +101,24 @@ class DrawerCardNormalIconWidget extends StatelessWidget {
                 ),
               ),
               onPressed: onPressed,
-              icon: Icon(
-                icon,
-                size: 24,
-                color: primaryColor,
+              icon: Material(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    color: primaryColor,
+                    width: 0.4,
+                  ),
+                  borderRadius: BorderRadius.circular(60),
+                ),
+                elevation: 5,
+                child: CircleAvatar(
+                  backgroundColor: whiteColor,
+                  radius: 15,
+                  child: Icon(
+                    icon,
+                    size: 18,
+                    color: primaryColor,
+                  ),
+                ),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
 class CustomInputMultiLineField extends StatelessWidget {
@@ -16,12 +17,15 @@ class CustomInputMultiLineField extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            label!,
-            style: TextStyle(
-              fontFamily: fontTextFormFieldLabel,
-              fontSize: fontSizeTextFormFieldLabel,
-              color: greyTextFormFieldLabel,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Text(
+              label!,
+              style: TextStyle(
+                fontFamily: fontTextFormFieldLabel,
+                fontSize: fontSizeTextFormFieldLabel,
+                color: greyTextFormFieldLabel,
+              ),
             ),
           ),
           TextFormField(
@@ -31,9 +35,15 @@ class CustomInputMultiLineField extends StatelessWidget {
               color: blackTextFormFieldValue,
             ),
             minLines: 5,
-            maxLines: 10,
+            maxLines: null,
+            maxLength: 2048,
             decoration: InputDecoration(
-              focusedBorder: UnderlineInputBorder(
+              helperStyle: TextStyle(
+                fontFamily: fontTextFormFieldLabel,
+                fontSize: fontSizeTextFormFieldLabel,
+                color: greyTextFormFieldLabel,
+              ),
+              border: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: greyColor,
                   width: 0.4,

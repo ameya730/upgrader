@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpeepalvoappoct/3_controllers/1.0_search_controller.dart';
+import 'package:vpeepalvoappoct/6_templates/1.0_textfield.dart';
 import 'package:vpeepalvoappoct/9_widgets/0_global_widgets/global_page_container_widget.dart';
 import 'package:vpeepalvoappoct/9_widgets/3_search_widgets/0_search_widget.dart';
 import 'package:vpeepalvoappoct/9_widgets/3_search_widgets/1_advancedsearch_widget.dart';

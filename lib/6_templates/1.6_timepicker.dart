@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_material_pickers/flutter_material_pickers.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
-class CustomDropDownInputField extends StatelessWidget {
+class TimePicker extends StatelessWidget {
   final String? label;
-  final String? dropDownTitle;
-  final List? dropDownList;
-  final TextEditingController? pickerController;
-  final String? initialValue;
+  final TextEditingController? timeController;
 
-  CustomDropDownInputField({
+  TimePicker({
     this.label,
-    this.dropDownTitle,
-    this.dropDownList,
-    this.pickerController,
-    this.initialValue = ' ',
+    this.timeController,
   });
 
   @override
@@ -34,30 +27,28 @@ class CustomDropDownInputField extends StatelessWidget {
             ),
           ),
           Container(
-            height: 25,
             child: TextFormField(
+              onTap: () {
+                showTimePicker(context: context, initialTime: TimeOfDay.now())
+                    .then(
+                  (value) {
+                    print(value);
+                    final localizations = MaterialLocalizations.of(context);
+                    timeController!.text =
+                        localizations.formatTimeOfDay(value!);
+                  },
+                );
+              },
+              readOnly: true,
               style: TextStyle(
                 fontFamily: fontTextFormFieldLabel,
                 fontSize: fontSizeTextFormFieldValue,
                 color: blackTextFormFieldValue,
               ),
-              onTap: () {
-                showMaterialScrollPicker(
-                  title: dropDownTitle!,
-                  context: context,
-                  items: dropDownList!,
-                  selectedItem: pickerController,
-                  onChanged: (value) async {
-                    pickerController!.text = value.toString();
-                  },
-                );
-              },
-              controller: pickerController,
-              readOnly: true,
+              controller: timeController!,
               decoration: InputDecoration(
                 suffixIcon: Icon(
                   Icons.arrow_drop_down,
-                  color: greyTextFormFieldLabel,
                 ),
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(

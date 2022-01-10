@@ -6,12 +6,14 @@ class CustomDisplayField extends StatelessWidget {
   final String? initialValue;
   final double? formHeight;
   final int? maxlines;
+  final popUpField;
 
   CustomDisplayField({
     this.label,
     this.initialValue,
     this.formHeight = 25,
     this.maxlines = 1,
+    this.popUpField,
   });
 
   @override
@@ -62,12 +64,83 @@ class CustomDisplayField extends StatelessWidget {
               right: 2.0,
             ),
             child: GestureDetector(
-              onTap: () {},
               child: Icon(
                 Icons.edit,
                 color: greyColor,
                 size: 12,
               ),
+              onTap: () {
+                showDialog(
+                  barrierDismissible: false,
+                  context: context,
+                  builder: (BuildContext context) {
+                    return SimpleDialog(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: popUpField,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 12.0),
+                                child: TextButton(
+                                  style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(5),
+                                    backgroundColor:
+                                        MaterialStateProperty.all(greyColor),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'Cancel',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: whiteColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: fontFamilyCandara,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 12.0),
+                                child: TextButton(
+                                  style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(5),
+                                    backgroundColor:
+                                        MaterialStateProperty.all(primaryColor),
+                                  ),
+                                  onPressed: () {},
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'Save',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: whiteColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: fontFamilyCandara,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
             ),
           ),
         ],

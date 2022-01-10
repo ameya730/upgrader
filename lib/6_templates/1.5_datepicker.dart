@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_material_pickers/flutter_material_pickers.dart';
+import 'package:intl/intl.dart';
 import 'package:vpeepalvoappoct/6_templates/0.0_constants.dart';
 
-class CustomDropDownInputField extends StatelessWidget {
+class DatePicker extends StatelessWidget {
   final String? label;
-  final String? dropDownTitle;
-  final List? dropDownList;
-  final TextEditingController? pickerController;
-  final String? initialValue;
+  final TextEditingController? datecontroller;
 
-  CustomDropDownInputField({
+  DatePicker({
     this.label,
-    this.dropDownTitle,
-    this.dropDownList,
-    this.pickerController,
-    this.initialValue = ' ',
+    this.datecontroller,
   });
 
   @override
@@ -36,28 +30,29 @@ class CustomDropDownInputField extends StatelessWidget {
           Container(
             height: 25,
             child: TextFormField(
+              onTap: () {
+                showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(1900),
+                  lastDate: DateTime(2200),
+                ).then(
+                  (value) {
+                    datecontroller!.text =
+                        DateFormat('yyyy-MM-dd').format(value!);
+                  },
+                );
+              },
+              readOnly: true,
               style: TextStyle(
                 fontFamily: fontTextFormFieldLabel,
                 fontSize: fontSizeTextFormFieldValue,
                 color: blackTextFormFieldValue,
               ),
-              onTap: () {
-                showMaterialScrollPicker(
-                  title: dropDownTitle!,
-                  context: context,
-                  items: dropDownList!,
-                  selectedItem: pickerController,
-                  onChanged: (value) async {
-                    pickerController!.text = value.toString();
-                  },
-                );
-              },
-              controller: pickerController,
-              readOnly: true,
+              controller: datecontroller!,
               decoration: InputDecoration(
                 suffixIcon: Icon(
                   Icons.arrow_drop_down,
-                  color: greyTextFormFieldLabel,
                 ),
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
